@@ -14,6 +14,9 @@ from claude_agent_sdk import (
     ToolUseBlock,
     query,
 )
+from dotenv import load_dotenv
+
+load_dotenv()  # picks up ANTHROPIC_API_KEY from .env if present
 
 
 async def main(prompt: str) -> None:

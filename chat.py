@@ -15,6 +15,9 @@ from claude_agent_sdk import (
     create_sdk_mcp_server,
     tool,
 )
+from dotenv import load_dotenv
+
+load_dotenv()  # picks up ANTHROPIC_API_KEY from .env if present
 
 
 @tool("current_time", "Get the current local date and time", {})

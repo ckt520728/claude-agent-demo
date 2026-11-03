@@ -16,7 +16,15 @@ uv run pytest             # live tests are skipped
 uv run pytest --run-live  # sends a real prompt to Claude (costs a little)
 ```
 
-Authentication is handled by the Claude Code CLI (an existing `claude` login), or by setting `ANTHROPIC_API_KEY`.
+## Authentication
+
+Copy `.env.example` to `.env` and put your key in it. The scripts and tests load it automatically, and `.env` is in `.gitignore`, so it is never committed.
+
+```
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+Without a `.env`, the SDK falls back to your Claude Code login. When `ANTHROPIC_API_KEY` is set, it takes priority and usage is billed to that API key.
 
 ## Files
 

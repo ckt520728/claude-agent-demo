@@ -1,4 +1,7 @@
 import pytest
+from dotenv import load_dotenv
+
+load_dotenv()  # picks up ANTHROPIC_API_KEY from .env if present
 
 
 def pytest_addoption(parser):
