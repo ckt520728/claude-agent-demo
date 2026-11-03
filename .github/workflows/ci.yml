@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --locked
+
+      - name: Lint
+        run: uvx ruff check .
+
+      - name: Format check
+        run: uvx ruff format --check .
+
+      - name: Compile and import
+        run: |
+          uv run python -m compileall -q main.py chat.py
+          uv run python -c "import main, chat"

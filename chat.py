@@ -19,7 +19,11 @@ from claude_agent_sdk import (
 
 @tool("current_time", "Get the current local date and time", {})
 async def current_time(args: dict) -> dict:
-    return {"content": [{"type": "text", "text": datetime.now().isoformat(timespec="seconds")}]}
+    return {
+        "content": [
+            {"type": "text", "text": datetime.now().isoformat(timespec="seconds")}
+        ]
+    }
 
 
 utils_server = create_sdk_mcp_server(name="utils", tools=[current_time])

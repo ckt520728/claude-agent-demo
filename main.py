@@ -34,9 +34,14 @@ async def main(prompt: str) -> None:
                     print(f"  [tool] {block.name} {block.input}")
         elif isinstance(message, ResultMessage):
             cost = f"${message.total_cost_usd:.4f}" if message.total_cost_usd else "n/a"
-            print(f"\n--- done: {message.subtype}, turns={message.num_turns}, cost={cost}")
+            print(
+                f"\n--- done: {message.subtype}, turns={message.num_turns}, cost={cost}"
+            )
 
 
 if __name__ == "__main__":
-    prompt = " ".join(sys.argv[1:]) or "List the files in this project and summarize what it is."
+    prompt = (
+        " ".join(sys.argv[1:])
+        or "List the files in this project and summarize what it is."
+    )
     anyio.run(main, prompt)
