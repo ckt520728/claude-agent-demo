@@ -26,6 +26,11 @@ async def main(prompt: str) -> int:
         system_prompt="You are a concise, careful assistant working in this project folder.",
         allowed_tools=["Read", "Glob", "Grep"],  # read-only by default
         permission_mode="default",
+        # Don't load your own Claude Code setup (settings, MCP servers,
+        # plugins, skills): it can add ~200K tokens to every request.
+        setting_sources=[],
+        strict_mcp_config=True,
+        skills=[],
         max_turns=10,
     )
 

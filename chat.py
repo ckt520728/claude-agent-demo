@@ -47,6 +47,12 @@ async def main() -> int:
         mcp_servers={"utils": utils_server},
         # Custom MCP tools are named mcp__<server>__<tool>
         allowed_tools=["Read", "Glob", "Grep", "mcp__utils__current_time"],
+        # Don't load your own Claude Code setup (settings, MCP servers,
+        # plugins, skills): it can add ~200K tokens to every request.
+        # strict_mcp_config still keeps the "utils" server passed above.
+        setting_sources=[],
+        strict_mcp_config=True,
+        skills=[],
         max_turns=20,
     )
 
