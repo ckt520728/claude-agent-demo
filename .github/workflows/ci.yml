@@ -32,3 +32,6 @@ jobs:
         run: |
           uv run python -m compileall -q main.py chat.py
           uv run python -c "import main, chat"
+
+      - name: Tests (live tests skipped)
+        run: uv run pytest -rs

@@ -9,6 +9,13 @@ uv run main.py "Summarize the files in this folder"   # one-shot query()
 uv run chat.py                                        # interactive ClaudeSDKClient + custom tool
 ```
 
+## Test
+
+```powershell
+uv run pytest             # live tests are skipped
+uv run pytest --run-live  # sends a real prompt to Claude (costs a little)
+```
+
 Authentication is handled by the Claude Code CLI (an existing `claude` login), or by setting `ANTHROPIC_API_KEY`.
 
 ## Files
