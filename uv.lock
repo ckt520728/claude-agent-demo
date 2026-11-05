@@ -9,7 +9,7 @@ resolution-markers = [
 [[package]]
 name = "agy-harness"
 version = "1.1.0"
-source = { git = "https://github.com/ckt520728/agy-harness.git?rev=57416a42ade6fb32e4835bda21f70a4f3ea5aa00#57416a42ade6fb32e4835bda21f70a4f3ea5aa00" }
+source = { git = "https://github.com/ckt520728/agy-harness.git?rev=b2ef684927c0e71e4b99c486f0e566097e66e4ee#b2ef684927c0e71e4b99c486f0e566097e66e4ee" }
 
 [[package]]
 name = "annotated-types"
@@ -144,7 +144,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "agy-harness", git = "https://github.com/ckt520728/agy-harness.git?rev=57416a42ade6fb32e4835bda21f70a4f3ea5aa00" },
+    { name = "agy-harness", git = "https://github.com/ckt520728/agy-harness.git?rev=b2ef684927c0e71e4b99c486f0e566097e66e4ee" },
     { name = "claude-agent-sdk", specifier = ">=0.2.176" },
     { name = "python-dotenv", specifier = ">=1.2.4" },
 ]

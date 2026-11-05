@@ -16,4 +16,4 @@ dev = [
 ]
 
 [tool.uv.sources]
-agy-harness = { git = "https://github.com/ckt520728/agy-harness.git", rev = "57416a42ade6fb32e4835bda21f70a4f3ea5aa00" }
+agy-harness = { git = "https://github.com/ckt520728/agy-harness.git", rev = "b2ef684927c0e71e4b99c486f0e566097e66e4ee" }
