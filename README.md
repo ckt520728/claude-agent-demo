@@ -7,6 +7,7 @@ Starter project for the Claude Agent SDK in Python (`claude-agent-sdk`), managed
 ```powershell
 uv run main.py "Summarize the files in this folder"   # one-shot query()
 uv run chat.py                                        # interactive ClaudeSDKClient + custom tool
+uv run harness_agent.py "Summarize this project"      # agent under the agy-harness control plane
 ```
 
 ## Test
@@ -30,5 +31,6 @@ Without a `.env`, the SDK falls back to your Claude Code login. When `ANTHROPIC_
 
 - `main.py`: a one-shot `query()` call with read-only built-in tools (Read, Glob, Grep).
 - `chat.py`: a multi-turn session using `ClaudeSDKClient`, with an in-process MCP tool (`current_time`).
+- `harness_agent.py`: a run under [agy-harness](https://github.com/ckt520728/agy-harness), with a tool safety gate, budgets, and a verify-and-repair loop.
 
 Docs: https://code.claude.com/docs/en/agent-sdk
